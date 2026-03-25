@@ -70,7 +70,8 @@
             clientX: event.clientX,
             clientY: event.clientY,
             shiftKey: event.shiftKey,
-            altKey: event.altKey
+            altKey: event.altKey,
+            ctrlKey: event.ctrlKey
         })
     }
 
