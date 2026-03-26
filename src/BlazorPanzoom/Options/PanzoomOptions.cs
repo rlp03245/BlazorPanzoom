@@ -21,7 +21,6 @@ namespace BlazorPanzoom
 
         private static readonly PanzoomOptions Default = new();
 
-        private readonly Contain? _contain;
         public static ref readonly PanzoomOptions DefaultOptions => ref Default;
 
         [JsonInclude]
@@ -106,11 +105,7 @@ namespace BlazorPanzoom
 
         [JsonInclude]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public Contain? Contain
-        {
-            private get => _contain;
-            init => _contain = value is not null && value.Equals(BlazorPanzoom.Contain.None) ? null : value;
-        }
+        public Contain? Contain { private get; init; }
 
         [JsonInclude]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
